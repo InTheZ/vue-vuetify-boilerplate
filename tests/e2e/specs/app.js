@@ -7,12 +7,12 @@ describe('App views', () => {
   })
 
   it('have app login btn', () => {
-    cy.get('[data-test="app-login-btn"]')
+    cy.get('[data-cy="app-login-btn"]')
       .should('have.attr', 'href', '/login')
   })
 
   it('have app signup btn', () => {
-    cy.get('[data-test="app-signup-btn"]')
+    cy.get('[data-cy="app-signup-btn"]')
       .should('have.attr', 'href', '/signup')
   })
 })

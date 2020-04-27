@@ -14,7 +14,7 @@ v-container(fill-height, align-center, justify-center)
           | {{ error }}
       form(data-test="form", ref="form", @submit.prevent="login")
         v-text-field(
-          data-test="username-input"
+          data-cy="username-input"
           ref="username",
           v-model="username",
           :readonly="processing",
@@ -27,7 +27,7 @@ v-container(fill-height, align-center, justify-center)
           v-validate.disable="'required'",
           :error-messages="errors.first('username')")
         password-field(
-          data-test="password-input",
+          data-cy="password-input",
           v-model="password",
           :readonly="processing",
           outlined,

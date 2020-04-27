@@ -6,27 +6,32 @@ describe('Login views', () => {
       cy.visit('/login')
     })
 
-    it('autofocus to username', () => {
-      cy.focused().should('have.attr', 'data-test', 'username-input')
+    it('have create account link', () => {
+      cy.get('[data-cy="signup-link"]')
+        .should('have.attr', 'href', '/signup')
     })
 
+    // it('autofocus to username', () => {
+    //   cy.focused().should('have.attr', 'data-cy', 'username-input')
+    // })
+
     it('have create account link', () => {
-      cy.get('[data-test="signup-link"]')
+      cy.get('[data-cy="signup-link"]')
         .should('have.attr', 'href', '/signup')
     })
 
     it('have reset password link', () => {
-      cy.get('[data-test="reset-password-link"]')
+      cy.get('[data-cy="reset-password-link"]')
         .should('have.attr', 'href', '/reset-password')
     })
 
     it('password required', () => {
-      cy.get('[data-test="username-input"]')
+      cy.get('[data-cy="username-input"]')
         .type(`${Cypress.env('username')}{enter}`)
     })
 
     it('username required', () => {
-      cy.get('[data-test="password-input"]')
+      cy.get('[data-cy="password-input"]')
         .type(`${Cypress.env('password')}{enter}`)
     })
   })

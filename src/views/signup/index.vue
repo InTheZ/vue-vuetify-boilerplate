@@ -14,7 +14,7 @@ v-container(fill-height, align-center, justify-center)
         | Sign up
       v-card-text
         v-text-field(
-          data-test="email-input",
+          data-cy="email-input",
           v-model="email",
           v-validate="'required|email|user-availability:email,false'",
           data-vv-delay="350",
@@ -26,7 +26,7 @@ v-container(fill-height, align-center, justify-center)
           autocomplete="email",
           maxlength="192")
         v-text-field(
-          data-test="username-input",
+          data-cy="username-input",
           v-model="username",
           v-validate="'required|length:5,32|user-availability:username,false'",
           data-vv-delay="350",
@@ -37,7 +37,7 @@ v-container(fill-height, align-center, justify-center)
           autocomplete="username",
           maxlength="32")
         password-field(
-          data-test="password-input",
+          data-cy="password-input",
           v-model="password",
           v-validate="'required|length:5,32'",
           outlined,
@@ -48,7 +48,7 @@ v-container(fill-height, align-center, justify-center)
           maxlength="32",
           counter)
         v-text-field(
-          data-test="name-input",
+          data-cy="name-input",
           v-model="name",
           v-validate="'required'",
           outlined,
@@ -60,7 +60,7 @@ v-container(fill-height, align-center, justify-center)
         v-layout.mx-0(row, reverse)
           v-flex(shrink)
             v-btn.ma-0.text-none(
-              data-test="submit-btn",
+              data-cy="submit-btn",
               type="submit",
               color="primary"
               :loading="processing",
@@ -69,7 +69,7 @@ v-container(fill-height, align-center, justify-center)
           v-spacer
           v-flex(shrink)
             v-btn.ma-0.text-none(
-              data-test="login-link",
+              data-cy="login-link",
               text,
               color="primary",
               :disabled="processing",

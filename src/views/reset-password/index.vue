@@ -15,7 +15,7 @@ v-container(fill-height, align-center, justify-center)
           | {{ error }}
         form(data-test="form", ref="form", @submit.prevent="resetPassword")
           v-text-field(
-            data-test="email-input",
+            data-cy="email-input",
             v-model="email",
             autofocus,
             outlined,

@@ -34,12 +34,12 @@ v-app
     template(v-else)
       v-toolbar-items
         v-btn.text-none(
-          data-test="app-login-btn",
+          data-cy="app-login-btn",
           text,
           :to="{ name: 'sign in' }")
           | Log in
         v-btn.text-none(
-          data-test="app-signup-btn",
+          data-cy="app-signup-btn",
           text,
           :to="{ name: 'register' }")
           | Sign up

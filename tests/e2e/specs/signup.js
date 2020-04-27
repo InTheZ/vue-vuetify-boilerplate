@@ -8,16 +8,16 @@ describe('Sign up views', () => {
   })
 
   it('autofocus to email', () => {
-    cy.focused().should('have.attr', 'data-test', 'email-input')
+    cy.focused().should('have.attr', 'data-cy', 'email-input')
   })
 
   it('have login link', () => {
-    cy.get('[data-test="login-link"]')
+    cy.get('[data-cy="login-link"]')
       .should('have.attr', 'href', '/login')
   })
 
   it('all field required', () => {
-    cy.get('[data-test="submit-btn"]')
+    cy.get('[data-cy="submit-btn"]')
       .trigger('click')
 
     cy.contains(veeEn.required('email'))
@@ -27,9 +27,9 @@ describe('Sign up views', () => {
   })
 
   it('username and password length constraint', () => {
-    cy.get('[data-test="username-input"]')
+    cy.get('[data-cy="username-input"]')
       .type('x')
-    cy.get('[data-test="password-input"]')
+    cy.get('[data-cy="password-input"]')
       .type('x')
 
     const params = [5, 32]
@@ -39,18 +39,18 @@ describe('Sign up views', () => {
   })
 
   it('should registered', async () => {
-    cy.resetDb()
+    // cy.resetDb()
 
-    cy.get('[data-test="email-input"]')
+    cy.get('[data-cy="email-input"]')
       .type(Cypress.env('email'))
-    cy.get('[data-test="username-input"]')
+    cy.get('[data-cy="username-input"]')
       .type(Cypress.env('username'))
-    cy.get('[data-test="password-input"]')
+    cy.get('[data-cy="password-input"]')
       .type('tester')
-    cy.get('[data-test="name-input"]')
+    cy.get('[data-cy="name-input"]')
       .type('tester')
 
-    cy.get('[data-test="submit-btn"]').click()
+    cy.get('[data-cy="submit-btn"]').click()
     cy.location('pathname').should('eq', '/')
   })
 })

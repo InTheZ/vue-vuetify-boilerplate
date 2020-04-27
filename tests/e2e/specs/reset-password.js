@@ -6,6 +6,6 @@ describe('Reset password views', () => {
   })
 
   it('autofocus to email', () => {
-    cy.focused().should('have.attr', 'data-test', 'email-input')
+    cy.focused().should('have.attr', 'data-cy', 'email-input')
   })
 })
