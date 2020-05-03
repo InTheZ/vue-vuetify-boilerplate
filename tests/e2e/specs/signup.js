@@ -7,6 +7,9 @@ describe('Sign up views', () => {
     cy.visit('/signup')
   })
 
+  afterEach(() => {
+  })
+
   it('autofocus to email', () => {
     cy.focused().should('have.attr', 'data-cy', 'email-input')
   })
@@ -40,6 +43,30 @@ describe('Sign up views', () => {
 
   it('should registered', async () => {
     // cy.resetDb()
+    cy.server()
+    cy.route({
+      method: 'POST',
+      url: '/register',
+      response: [
+
+      ]
+    })
+
+    cy.route({
+      method: 'GET',
+      url: '/user-availibility*',
+      response: [
+
+      ]
+    })
+
+    cy.route({
+      method: 'GET',
+      url: '/',
+      response: [
+
+      ]
+    })
 
     cy.get('[data-cy="email-input"]')
       .type(Cypress.env('email'))

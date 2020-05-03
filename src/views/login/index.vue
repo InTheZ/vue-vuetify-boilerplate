@@ -41,6 +41,7 @@ v-container(fill-height, align-center, justify-center)
             v-checkbox.mt-0(label="Remember me", v-model="remember", hide-details)
           v-flex.text-right(xs6)
             v-btn.ma-0.text-none(
+              data-cy="submit-btn",
               type="submit",
               color="primary"
               :loading="processing")
@@ -48,7 +49,7 @@ v-container(fill-height, align-center, justify-center)
     v-card-actions
       v-spacer
       v-btn.ma-0.text-none(
-        data-test="reset-password-link",
+        data-cy="reset-password-link",
         text,
         color="primary",
         :disabled="processing",
@@ -56,7 +57,7 @@ v-container(fill-height, align-center, justify-center)
           | Forgot password
       v-divider(vertical)
       v-btn.ma-0.text-none(
-        data-test="signup-link",
+        data-cy="signup-link",
         text,
         color="primary",
         :to="{ name: 'register' }")
