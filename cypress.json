@@ -1,6 +1,7 @@
 {
   "pluginsFile": "tests/e2e/plugins/index.js",
   "env": {
+    "stub": false,
     "username": "tester2",
     "email": "tester2@gmail.com",
     "password": "Likeme123!",

@@ -42,31 +42,34 @@ describe('Sign up views', () => {
   })
 
   it('should registered', async () => {
-    // cy.resetDb()
-    cy.server()
-    cy.route({
-      method: 'POST',
-      url: '/register',
-      response: [
+    if (Cypress.env('stub')) {
+      cy.server()
+      cy.route({
+        method: 'POST',
+        url: '/register',
+        response: [
 
-      ]
-    })
+        ]
+      })
 
-    cy.route({
-      method: 'GET',
-      url: '/user-availibility*',
-      response: [
+      cy.route({
+        method: 'GET',
+        url: '/user-availibility*',
+        response: [
 
-      ]
-    })
+        ]
+      })
 
-    cy.route({
-      method: 'GET',
-      url: '/',
-      response: [
+      cy.route({
+        method: 'GET',
+        url: '/',
+        response: [
 
-      ]
-    })
+        ]
+      })
+    } else {
+      cy.resetDb()
+    }
 
     cy.get('[data-cy="email-input"]')
       .type(Cypress.env('email'))

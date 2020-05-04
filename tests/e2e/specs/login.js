@@ -39,31 +39,33 @@ describe('Login views', () => {
     })
 
     it('redirect to home page', () => {
-      cy.server()
+      if (Cypress.env('stub')) {
+        cy.server()
 
-      cy.route({
-        method: 'POST',
-        url: '/auth/login',
-        response: [
+        cy.route({
+          method: 'POST',
+          url: '/auth/login',
+          response: [
 
-        ]
-      })
+          ]
+        })
 
-      cy.route({
-        method: 'GET',
-        url: '/auth/data',
-        response: [
+        cy.route({
+          method: 'GET',
+          url: '/auth/data',
+          response: [
 
-        ]
-      })
+          ]
+        })
 
-      cy.route({
-        method: 'GET',
-        url: '/',
-        response: [
+        cy.route({
+          method: 'GET',
+          url: '/',
+          response: [
 
-        ]
-      })
+          ]
+        })
+      }
 
       cy.get('[data-cy="username-input"]')
         .type(`${Cypress.env('username')}{enter}`)

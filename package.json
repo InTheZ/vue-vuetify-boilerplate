@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "test:e2e": "vue-cli-service test:e2e --mode e2e",
+    "test:functional": "vue-cli-service test:e2e --mode e2e -e stub=true",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
